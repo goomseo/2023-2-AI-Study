@@ -114,7 +114,10 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 
 # Generalization
 
-- 일반화
+- Generalization Gap = |(Test Error) - (Training Error)|
+- Cross Validation
+- Ensemble: 여러 개의 분류 모델을 조합해서 성능을 향상시키는 방법
+- Regularization: 위에서 서술한 바 있음.
 
 ---
 
