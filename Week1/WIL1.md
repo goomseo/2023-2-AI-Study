@@ -83,7 +83,6 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 # Neural Network
 
 ![(이미지 출처 - [클릭](https://www.ibm.com/topics/neural-networks))](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/3a/b8/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork.png)
-
 (이미지 출처 - [클릭](https://www.ibm.com/topics/neural-networks))
 
 - Neural Networks, 즉 인공신경망은 Artificial Neural Networks(ANNs) 혹은 Simulated Neural Networks(SNNs)로도 알려져 있으며, DL 알고리즘의 핵심이다.
@@ -119,12 +118,12 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 # Generalization
 
 - Bias & Variance for Generalization
-![(이미지 출처 - [클릭](https://ngkim.tistory.com/117))](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJsgt7%2FbtqPAt73DBV%2FqaO6ZQ3QCAPQKd5HXMl3y0%2Fimg.png)
+  ![Alt text](image.png)
 (이미지 출처 - [클릭](https://ngkim.tistory.com/117))
   - Bias (편향): 모델이 예측한 값과 실제 값의 차이. Bias가 너무 높으면, 학습 데이터에 모델이 집중 하지 않아 Underfitting이 일어날 수 있다.
   - Variance (분산): 모델의 예측 변동성. Variance가 너무 높으면, 모델이 학습 데이터에만 집중을 하게 되어 실제 데이터에 대해 일반화를 하지 못할 수 있다. (Overfitting)
 - Bias-Variance Trade-off in Supervised Learning
-  ![(이미지 출처 - [클릭](https://ngkim.tistory.com/117))](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb01JOd%2FbtqPLOoLZdh%2Fpm8D0sBelmLDq84sHnKqTk%2Fimg.png)
+ ![Alt text](image-1.png)
   (이미지 출처 - [클릭](https://ngkim.tistory.com/117))
   - Generalization Error = Bias^2 + Variance + Irreducible Error
 - 딥러닝 모델은 데이터로부터 직접 Feature를 만들어낸다. 이 때 처음부터 모델의 구조를 단순하게 설계하면 높은 수준의 Feature를 모델이 학습할 수 없다. 이를 방지하기 위해 모델의 구조를 복잡하게 설계하면 모델이 **학습 데이터를 과하게 학습(Overfitting)하게** 되는데, Train Data(일반적으로 Test Data의 부분 집합)에 대해서는 오차가 감소하지만 Test Data에 대해서는 오차가 증가하게 된다. —> **일반화 성능을 만족하지 못 하게 된다.(일반화 오류가 증가한다.)**
@@ -133,7 +132,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
     - 주어진 Train Set을 임의의 비율에 따라 Train Data + Validation Data로 분할하여 사용(보통 7:3). Train Data로 학습시킨 후, Validation Data로 검증을 한다. 이 때 Test Data는 사용하지 않는다.
   - [Ensemble](https://ineed-coffee.github.io/posts/Ensemble-concept/): 여러 분류 모델을 조합하여 최종 결과를 내어 성능을 향상시키는 기법
     - Ensemble 기법의 종류
-      ![(이미지 출처 - [클릭](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgPaI%2FbtqVnW4wNhK%2FN1JPB51zjzn6rkfT5g3By1%2Fimg.png)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgPaI%2FbtqVnW4wNhK%2FN1JPB51zjzn6rkfT5g3By1%2Fimg.png)
+      ![Alt text](image-2.png)
       (이미지 출처 - [클릭](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgPaI%2FbtqVnW4wNhK%2FN1JPB51zjzn6rkfT5g3By1%2Fimg.png))
       - Voting
         - 각각의 단일 모델이 예측한 분류 중 가장 많은 비율을 차지한 레이블을 최종 결과로 예측. 주로 Classification에서 쓰인다.
