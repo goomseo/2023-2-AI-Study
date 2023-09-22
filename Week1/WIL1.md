@@ -118,13 +118,15 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 # Generalization
 
 - Bias & Variance for Generalization
-  ![Alt text](https://velog.velcdn.com/images%2Fguri_coding%2Fpost%2F3917b331-7cbd-4aff-b289-42b3da754981%2FBias-Variance.png)
+  ![이미지 출처 - [클릭](https://velog.velcdn.com/images%2Fguri_coding%2Fpost%2F3917b331-7cbd-4aff-b289-42b3da754981%2FBias-Variance.png)](https://velog.velcdn.com/images%2Fguri_coding%2Fpost%2F3917b331-7cbd-4aff-b289-42b3da754981%2FBias-Variance.png)
 
   (이미지 출처 - [클릭](https://velog.velcdn.com/images%2Fguri_coding%2Fpost%2F3917b331-7cbd-4aff-b289-42b3da754981%2FBias-Variance.png))
+
   - Bias (편향): 모델이 예측한 값과 실제 값의 차이. Bias가 너무 높으면, 학습 데이터에 모델이 집중 하지 않아 Underfitting이 일어날 수 있다.
   - Variance (분산): 모델의 예측 변동성. Variance가 너무 높으면, 모델이 학습 데이터에만 집중을 하게 되어 실제 데이터에 대해 일반화를 하지 못할 수 있다. (Overfitting)
+
 - Bias-Variance Trade-off in Supervised Learning
- ![Alt text](image-1.png)
+  ![Alt text](image-1.png)
   (이미지 출처 - [클릭](https://ngkim.tistory.com/117))
   - Generalization Error = Bias^2 + Variance + Irreducible Error
 - 딥러닝 모델은 데이터로부터 직접 Feature를 만들어낸다. 이 때 처음부터 모델의 구조를 단순하게 설계하면 높은 수준의 Feature를 모델이 학습할 수 없다. 이를 방지하기 위해 모델의 구조를 복잡하게 설계하면 모델이 **학습 데이터를 과하게 학습(Overfitting)하게** 되는데, Train Data(일반적으로 Test Data의 부분 집합)에 대해서는 오차가 감소하지만 Test Data에 대해서는 오차가 증가하게 된다. —> **일반화 성능을 만족하지 못 하게 된다.(일반화 오류가 증가한다.)**
