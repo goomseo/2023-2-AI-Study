@@ -65,7 +65,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
   - 지도학습이 이루어질 때, 알고리즘이 예측한 답과 실제 정답의 차이를 비교하기 위한 함수이다. 즉, 학습 중 알고리즘이 얼마만큼 잘못 예측하나에 대한 지표로 작용할 수 있다. 최적화를 위해 최소화하는 것이 목적인 함수로, 목적 함수 (Objective Function)이라고도 불린다.
   - 어떤 학습 방식을 이용하는 지에 따라 손실 함수는 달라진다.
     - Classification Task
-      - Mean Square Error (MSE, 평균 제곱 오차):
+      - Mean Square Error (MSE, 평균 제곱 오차)
     - Regression Task
       - Cross Entropy
     - Probabilistic Task
@@ -89,7 +89,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 - Neural Networks, 즉 인공신경망은 Artificial Neural Networks(ANNs) 혹은 Simulated Neural Networks(SNNs)로도 알려져 있으며, DL 알고리즘의 핵심이다.
 - 인간의 뉴런 구조를 본떠 만든 ML 모델로, AI를 구현하기 위한 기술 중 하나이다.
 - 데이터의 입력과 출력 사이에 많은 Hidden Layer를 두어, 연속된 층의 인공 신경 세포(노드)를 통해 패턴을 발견하여 스스로 학습하게 한다.
-- Neural Network는 일반적으로 이전 layer로부터 값을 입력받아 **Activation Function(활성화함수)**를 통과시킨 후, 그 결과를 다음 layer로 출력한다.
+- Neural Network는 일반적으로 이전 layer로부터 값을 입력받아 **Activation Function(활성화함수)를** 통과시킨 후, 그 결과를 다음 layer로 출력한다.
   - 활성화함수의 종류
     - Binary Step Activation Function(이진 활성화함수)
       - 이진 활성화함수를 활성화 함수로 사용하면 다중 출력이 불가능하다.
@@ -97,7 +97,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
       - 만약 활성함수가 선형함수라면, 아무리 layer를 많이 쌓아도 하나의 layer로 대체가 가능하다. DL의 목적을 이루기 위해서는 여러 겹의 hidden layers가 필요하기 때문에, layer를 쌓기 위해서는 비선형 함수를 활성함수로 사용하여야 한다.
       - 역전파가 불가능하다.
       - 즉, 신경망의 표현성을 높이기 위해 비선형 함수를 사용한다.
-    - **Non-linear Activation Function(비선형 활성화함수)**
+    - **<u>Non-linear Activation Function(비선형 활성화함수)</u>**
       - Sigmoid, Softmax, tanh, ReLU, leaky ReLU, PReLU, etc.
 
 ---
@@ -119,21 +119,22 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 # Generalization
 
 - Bias & Variance for Generalization
-  [(이미지 출처 - [클릭](https://ngkim.tistory.com/117))](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJsgt7%2FbtqPAt73DBV%2FqaO6ZQ3QCAPQKd5HXMl3y0%2Fimg.png)
+  ![(이미지 출처 - [클릭](https://ngkim.tistory.com/117))](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJsgt7%2FbtqPAt73DBV%2FqaO6ZQ3QCAPQKd5HXMl3y0%2Fimg.png)
   (이미지 출처 - [클릭](https://ngkim.tistory.com/117))
   - Bias (편향): 모델이 예측한 값과 실제 값의 차이. Bias가 너무 높으면, 학습 데이터에 모델이 집중 하지 않아 Underfitting이 일어날 수 있다.
   - Variance (분산): 모델의 예측 변동성. Variance가 너무 높으면, 모델이 학습 데이터에만 집중을 하게 되어 실제 데이터에 대해 일반화를 하지 못할 수 있다. (Overfitting)
 - Bias-Variance Trade-off in Supervised Learning
-  [(이미지 출처 - [클릭](https://ngkim.tistory.com/117))](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb01JOd%2FbtqPLOoLZdh%2Fpm8D0sBelmLDq84sHnKqTk%2Fimg.png)
+  ![(이미지 출처 - [클릭](https://ngkim.tistory.com/117))](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb01JOd%2FbtqPLOoLZdh%2Fpm8D0sBelmLDq84sHnKqTk%2Fimg.png)
   (이미지 출처 - [클릭](https://ngkim.tistory.com/117))
   - Generalization Error = Bias^2 + Variance + Irreducible Error
-- 딥러닝 모델은 데이터로부터 직접 Feature를 만들어낸다. 이 때 처음부터 모델의 구조를 단순하게 설계하면 높은 수준의 Feature를 모델이 학습할 수 없다. 이를 방지하기 위해 모델의 구조를 복잡하게 설계하면 모델이 **학습 데이터를 과하게 학습(Overfitting)**하게 되는데, Train Data(일반적으로 Test Data의 부분 집합)에 대해서는 오차가 감소하지만 Test Data에 대해서는 오차가 증가하게 된다. —> **일반화 성능을 만족하지 못 하게 된다.(일반화 오류가 증가한다.)**
+- 딥러닝 모델은 데이터로부터 직접 Feature를 만들어낸다. 이 때 처음부터 모델의 구조를 단순하게 설계하면 높은 수준의 Feature를 모델이 학습할 수 없다. 이를 방지하기 위해 모델의 구조를 복잡하게 설계하면 모델이 **학습 데이터를 과하게 학습(Overfitting)하게** 되는데, Train Data(일반적으로 Test Data의 부분 집합)에 대해서는 오차가 감소하지만 Test Data에 대해서는 오차가 증가하게 된다. —> **일반화 성능을 만족하지 못 하게 된다.(일반화 오류가 증가한다.)**
 - 일반화 오류를 줄이기 위한 방법
   - Cross Validation (교차 검증)
     - 주어진 Train Set을 임의의 비율에 따라 Train Data + Validation Data로 분할하여 사용(보통 7:3). Train Data로 학습시킨 후, Validation Data로 검증을 한다. 이 때 Test Data는 사용하지 않는다.
   - [Ensemble](https://ineed-coffee.github.io/posts/Ensemble-concept/): 여러 분류 모델을 조합하여 최종 결과를 내어 성능을 향상시키는 기법
     - Ensemble 기법의 종류
-      https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgPaI%2FbtqVnW4wNhK%2FN1JPB51zjzn6rkfT5g3By1%2Fimg.png
+      ![(이미지 출처 - [클릭](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgPaI%2FbtqVnW4wNhK%2FN1JPB51zjzn6rkfT5g3By1%2Fimg.png)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgPaI%2FbtqVnW4wNhK%2FN1JPB51zjzn6rkfT5g3By1%2Fimg.png)
+      (이미지 출처 - [클릭](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYgPaI%2FbtqVnW4wNhK%2FN1JPB51zjzn6rkfT5g3By1%2Fimg.png))
       - Voting
         - 각각의 단일 모델이 예측한 분류 중 가장 많은 비율을 차지한 레이블을 최종 결과로 예측. 주로 Classification에서 쓰인다.
         - Hard Voting, Soft Voting - Soft Voting이 더욱 정교한 방식
