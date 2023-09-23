@@ -153,14 +153,14 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
       - L1 Norm & Loss
         - Manhattan Distance
           - 각 원소의 절대값의 합으로 계산
-          - $||x_1|| = \sum_{i=1}^n |x_i|$
-        - L1 Loss Function (MAE): $\sum_{i=1}^n |y_{true}-y_{pred}|$
+          - $||x_1|| = \displaystyle\sum_{i=1}^n |x_i|$
+        - L1 Loss Function (MAE): $\displaystyle\sum_{i=1}^n |y_{true}-y_{pred}|$
         - Outlier의 반영을 크게 하고 싶을 때 사용한다.
       - L2 Norm & Loss
         - Euclidean Distance
           - 각 원소의 제곱의 합에 루트를 씌운 것
-          - $||x_2|| = \sqrt{\sum_{i=1}^n x_i^2} = \sqrt{x^Tx}$
-        - L2 Loss Function (MSE): $\sum_{i=1}^n (y_{i, true} - y_{i, predict})^2$
+          - $||x_2|| = \sqrt{\displaystyle\sum_{i=1}^n x_i^2} = \sqrt{x^Tx}$
+        - L2 Loss Function (MSE): $\displaystyle\sum_{i=1}^n (y_{i, true} - y_{i, predict})^2$
         - Outlier를 무시하면서 안정적으로 학습하고 싶을 때 사용한다. → 일반적으로 모델은 안정적으로 loss를 받는 것이 학습에 좋기 때문에 L2 Loss를 많이 사용한다.
       - L1 Norm은 여러 값을 지닐 수 있지만, L2 Norm은 하나의 값만 지닌다.
     - ex) Data Augmentation, Parameter Norm Penalties, Early Stopping, Dropout, Dropout as Bayesian Approximation, Batch Normalization, MultiTask Learning, Transfer Learning
