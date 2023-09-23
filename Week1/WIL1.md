@@ -201,7 +201,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 
 # 1x1 Convolution
 
-![(이미지 출처 - [클릭](https://geunuk.tistory.com/435))](https://prod-files-secure.s3.us-west-2.amazonaws.com/cae03794-17b8-4ef4-ba76-6b600ee8c90f/4abd9310-9e66-4625-93ee-7af010efa0a5/1x1conv.png)
+![(이미지 출처 - [클릭](https://geunuk.tistory.com/435))](https://github.com/goomseo/2023-2-AI-Study/blob/main/Week1/image/1x1conv.png?raw=true)
 
 (이미지 출처 - [클릭](https://geunuk.tistory.com/435))
 
@@ -210,7 +210,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
   - 입력 데이터의 채널 수 조절
     - 입력 데이터의 채널 수가 크면, 1x1 Convolution을 이용하여 채널 수를 줄여 모델의 크기를 줄일 수 있다. 반대로 채널 수를 늘릴 수도 있다.
   - 연산량 감소
-    ![1x1conv_ex.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cae03794-17b8-4ef4-ba76-6b600ee8c90f/123f21fe-174f-475d-8681-20461b6e3390/1x1conv_ex.png)
+    ![1x1conv_ex.png](https://github.com/goomseo/2023-2-AI-Study/blob/main/Week1/image/1x1conv_ex.png?raw=true)
   - 비선형성
     - 비선형 활성화 함수를 사용하게 되어 복잡한 패턴을 더 잘 인식할 수 있게 된다.
 
@@ -219,7 +219,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 # Modern CNN
 
 - AlexNet
-  ![(이미지 출처 - [클릭](https://velog.io/@lighthouse97/AlexNet%EC%9D%98-%EC%9D%B4%ED%95%B4))](https://prod-files-secure.s3.us-west-2.amazonaws.com/cae03794-17b8-4ef4-ba76-6b600ee8c90f/7385004e-4b4a-4658-a197-b4d36a45fef5/alexnet.png)
+  ![(이미지 출처 - [클릭](https://velog.io/@lighthouse97/AlexNet%EC%9D%98-%EC%9D%B4%ED%95%B4))](https://github.com/goomseo/2023-2-AI-Study/blob/main/Week1/image/alexnet.png?raw=true)
   (이미지 출처 - [클릭](https://velog.io/@lighthouse97/AlexNet%EC%9D%98-%EC%9D%B4%ED%95%B4))
   - 2개의 GPU로 병렬 연산을 수행 → 병렬 구조
   - 5개의 Convolutional Layer와 3개의 Fully-Connected Layer로 구성
@@ -229,3 +229,5 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
   - 1x1 Convolution을 사용하며, 복잡한 구조를 띈다.
 - ResNet
   - Skip Connection을 이용한다.
+
+---
