@@ -128,12 +128,15 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
   - Generalization Error = Bias^2 + Variance + Irreducible Error
 - 딥러닝 모델은 데이터로부터 직접 Feature를 만들어낸다. 이 때 처음부터 모델의 구조를 단순하게 설계하면 높은 수준의 Feature를 모델이 학습할 수 없다. 이를 방지하기 위해 모델의 구조를 복잡하게 설계하면 모델이 **학습 데이터를 과하게 학습(Overfitting)**하게 되는데, Train Data(일반적으로 Test Data의 부분 집합)에 대해서는 오차가 감소하지만 Test Data에 대해서는 오차가 증가하게 된다. —> **일반화 성능을 만족하지 못 하게 된다.(일반화 오류가 증가한다.)**
 - 일반화 오류를 줄이기 위한 방법
+
   - Cross Validation (교차 검증)
     - 주어진 Train Set을 임의의 비율에 따라 Train Data + Validation Data로 분할하여 사용(보통 7:3). Train Data로 학습시킨 후, Validation Data로 검증을 한다. 이 때 Test Data는 사용하지 않는다.
   - [Ensemble](https://ineed-coffee.github.io/posts/Ensemble-concept/): 여러 분류 모델을 조합하여 최종 결과를 내어 성능을 향상시키는 기법
+
     - Ensemble 기법의 종류
-      
+
       ![(/Week1/image/ensemble.png)](https://github.com/goomseo/2023-2-AI-Study/blob/main/Week1/image/ensemble.png?raw=true)
+
       - Voting
         - 각각의 단일 모델이 예측한 분류 중 가장 많은 비율을 차지한 레이블을 최종 결과로 예측. 주로 Classification에서 쓰인다.
         - Hard Voting, Soft Voting - Soft Voting이 더욱 정교한 방식
@@ -147,38 +150,82 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
       - Boosting
         - Bagging과 비슷하게 여러 모델들을 학습시키고, 각 모델들의 출력을 Averaging 혹은 Voting하여 최종 출력을 결정하지만, Ensemble 되는 모델들은 **모두 동일한 알고리즘을 기반으로 한 모델**이며, 각 모델들이 병렬적이 아닌 **순차적**으로 학습하고, Aggregating 시 각 모델의 출력에 **가중치**를 적용하여 Aggregating한다.
         - Underfitting된 동일 단일 모델들에 적용했을 때 큰 효과가 있다. → Variance가 작은 여러 모델들을 결합하여 Bias를 낮추는 Ensemble 기법
-  - [Regularization](https://pozalabs.github.io/Regularization/) (정규화, 규제화)
-    - 고의로 학습을 방해하여 Generalization 성능을 높인다.
-    - Norm: 벡터의 크기를 계산하는 방법
-      - L1 Norm & Loss
-        - Manhattan Distance
-          - 각 원소의 절대값의 합으로 계산
-          - $||x_1|| = \displaystyle\sum_{i=1}^n |x_i|$
-        - L1 Loss Function (MAE): $\displaystyle\sum_{i=1}^n |y_{true}-y_{pred}|$
-        - Outlier의 반영을 크게 하고 싶을 때 사용한다.
-      - L2 Norm & Loss
-        - Euclidean Distance
-          - 각 원소의 제곱의 합에 루트를 씌운 것
-          - $||x_2|| = \sqrt{\displaystyle\sum_{i=1}^n x_i^2} = \sqrt{x^Tx}$
-        - L2 Loss Function (MSE): $\displaystyle\sum_{i=1}^n (y_{i, true} - y_{i, predict})^2$
-        - Outlier를 무시하면서 안정적으로 학습하고 싶을 때 사용한다. → 일반적으로 모델은 안정적으로 loss를 받는 것이 학습에 좋기 때문에 L2 Loss를 많이 사용한다.
+
+- [Regularization](https://pozalabs.github.io/Regularization/) (정규화, 규제화)
+  - 고의로 학습을 방해하여 Generalization 성능을 높인다.
+  - Regularization의 기법 종류
+    - Data Augmentation (데이터 증강)
+      - 데이터가 많이 없을 때, 데이터의 양을 늘리기 위해 원본 데이터에 각종 변환을 적용하여 데이터 양을 증강시키는 기법
+    - Parameter Norm Penalties
+      - Norm: 벡터의 크기를 계산하는 방법
+      - Loss Function(Cost Function)에 Norm Penalty를 부여 → parameter가 exploding 되는 것을 방지
+      - L1 Regularization (Lasso)
+        - L1 Norm & Loss
+          - Manhattan Distance
+            - 각 원소의 절댓값의 합으로 계산
+            - $||x_1|| = \displaystyle\sum_{i=1}^n |x_i|$
+          - L1 Loss Function (MAE): $\displaystyle\sum_{i=1}^n |y_{true}-y_{pred}|$
+          - Outlier의 반영을 크게 하고 싶을 때 사용한다.
+      - L2 Regularization (Ridge)
+        - L2 Norm & Loss
+          - Euclidean Distance
+            - 각 원소의 제곱의 합에 루트를 씌운 것
+            - $||x_2|| = \displaystyle\sqrt{\sum_{i=1}^n x_i^2} = \sqrt{x^Tx}$
+          - L2 Loss Function (MSE): $\displaystyle\sum_{i=1}^n (y_{i, true} - y_{i, predict})^2$
+          - Outlier를 무시하면서 안정적으로 학습하고 싶을 때 사용한다. → 일반적으로 모델은 안정적으로 loss를 받는 것이 학습에 좋기 때문에 **L2 Loss를 많이 사용한다.**
       - L1 Norm은 여러 값을 지닐 수 있지만, L2 Norm은 하나의 값만 지닌다.
-    - ex) Data Augmentation, Parameter Norm Penalties, Early Stopping, Dropout, Dropout as Bayesian Approximation, Batch Normalization, MultiTask Learning, Transfer Learning
+    - Early Stopping
+      - 학습 횟수(Epoch 수)가 많을 수록 Train Data에 대한 오차는 작아지지만, 이것이 Overfitting을 초래하여 모델의 Generalization 성능이 떨어질 수 있다. → **이전 Epoch 때와 비교해서 오차가 증가했다면 학습을 조기 종료한다.**
+    - Noise Robustness
+      - 임의의 Noise를 입력 데이터와 신경망의 가중치에 추가하면, Test에서 더 좋은 결과를 얻는다는 실험적인 결과를 활용하는 기법.
+    - Dropout
+      - 모델이 특정한 Feature에 과도하게 집중하여 학습하게되어 발생할 수 있는 Overfitting을 방지하기 위해 Layer에서 임의의 확률로 뉴런을 제거(Drop)하는 기법.
+      - Train Data에서만 적용되며, Test Data에 대해서는 항상 모든 노드가 추론에 참여한다.
+    - Label Smoothing
+      - 데이터를 섞어 데이터를 증강시키는 기법.
+      - 정답이면 1, 아니면 0으로 구성되는 Label을 0과 1 사이의 값을 가지도록 하여 Overfitting을 방지해 모델이 너무 확신을 가지지 않도록 도와주는 기법.
+    - 그 외: Dropout as Bayesian Approximation, Batch Normalization, MultiTask Learning, Transfer Learning, etc.
 
 ---
 
 # Convolution Neural Network
 
-- d
+- CNN(합성곱 신경망)은 합성곱 연산을 사용하는 인공 신경망 중 하나로, 주로 음성 인식이나 시각적 이미지를 분석할 때 사용된다.
+- 3차원 데이터(Width, Height, Depth)의 공간적인 정보를 유지한 채 다음 Layer로 데이터를 보낼 수 있어, Fully Connected Neural Network(FNN)에 비해 연산량이 줄고 좋은 성능을 보인다.
+- Filter(Kernel)을 이용하여 입력 데이터에 대해 합성곱 연산을 진행 → Feature를 추출하여 Feature Map을 생성한다.
+- Pooling: 실제로 유효하면서 주요한 Feature를 추출하기 위해 사용하는 연산으로, Feature Map의 크기를 줄여 연산량을 줄이기 위한 과정이다.
+  - 최댓값을 가져와 Feature Map을 줄이는 Max Pooling, 평균을 가져와 Feature Map을 줄이는 Average Pooling이 있다.
+  - Pooling은 최근에는 잘 쓰지 않는다고 한다. 기술의 발전으로 인해 정보 손실을 감수하면서까지 연산을 줄일 필요가 없어졌기 때문이다.
 
 ---
 
-# 1x1 convolution
+# 1x1 Convolution
 
-- d
+![(이미지 출처 - [클릭](https://geunuk.tistory.com/435))](https://prod-files-secure.s3.us-west-2.amazonaws.com/cae03794-17b8-4ef4-ba76-6b600ee8c90f/4abd9310-9e66-4625-93ee-7af010efa0a5/1x1conv.png)
+
+(이미지 출처 - [클릭](https://geunuk.tistory.com/435))
+
+- 1x1 크기의 Convolution Filter를 이용한 Convolution Layer이다.
+- 장점
+  - 입력 데이터의 채널 수 조절
+    - 입력 데이터의 채널 수가 크면, 1x1 Convolution을 이용하여 채널 수를 줄여 모델의 크기를 줄일 수 있다. 반대로 채널 수를 늘릴 수도 있다.
+  - 연산량 감소
+    ![1x1conv_ex.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/cae03794-17b8-4ef4-ba76-6b600ee8c90f/123f21fe-174f-475d-8681-20461b6e3390/1x1conv_ex.png)
+  - 비선형성
+    - 비선형 활성화 함수를 사용하게 되어 복잡한 패턴을 더 잘 인식할 수 있게 된다.
 
 ---
 
 # Modern CNN
 
-- d
+- AlexNet
+  ![(이미지 출처 - [클릭](https://velog.io/@lighthouse97/AlexNet%EC%9D%98-%EC%9D%B4%ED%95%B4))](https://prod-files-secure.s3.us-west-2.amazonaws.com/cae03794-17b8-4ef4-ba76-6b600ee8c90f/7385004e-4b4a-4658-a197-b4d36a45fef5/alexnet.png)
+  (이미지 출처 - [클릭](https://velog.io/@lighthouse97/AlexNet%EC%9D%98-%EC%9D%B4%ED%95%B4))
+  - 2개의 GPU로 병렬 연산을 수행 → 병렬 구조
+  - 5개의 Convolutional Layer와 3개의 Fully-Connected Layer로 구성
+- VGGNet
+  - 3x3 Convolutional Filter 사용
+- [GoogLeNet](https://velog.io/@woojinn8/CNN-Networks-3.-GoogLeNet)
+  - 1x1 Convolution을 사용하며, 복잡한 구조를 띈다.
+- ResNet
+  - Skip Connection을 이용한다.
