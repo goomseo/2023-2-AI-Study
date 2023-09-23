@@ -132,6 +132,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
     - 주어진 Train Set을 임의의 비율에 따라 Train Data + Validation Data로 분할하여 사용(보통 7:3). Train Data로 학습시킨 후, Validation Data로 검증을 한다. 이 때 Test Data는 사용하지 않는다.
   - [Ensemble](https://ineed-coffee.github.io/posts/Ensemble-concept/): 여러 분류 모델을 조합하여 최종 결과를 내어 성능을 향상시키는 기법
     - Ensemble 기법의 종류
+      
       ![(/Week1/image/ensemble.png)](https://github.com/goomseo/2023-2-AI-Study/blob/main/Week1/image/ensemble.png?raw=true)
       - Voting
         - 각각의 단일 모델이 예측한 분류 중 가장 많은 비율을 차지한 레이블을 최종 결과로 예측. 주로 Classification에서 쓰인다.
