@@ -126,7 +126,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 
 - Bias & Variance for Generalization
     
-  ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJsgt7%2FbtqPAt73DBV%2FqaO6ZQ3QCAPQKd5HXMl3y0%2Fimg.png)
+  ![bias_variance](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJsgt7%2FbtqPAt73DBV%2FqaO6ZQ3QCAPQKd5HXMl3y0%2Fimg.png)
     
     (이미지 출처 - [클릭](https://ngkim.tistory.com/117))
     
