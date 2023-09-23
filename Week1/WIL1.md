@@ -117,11 +117,11 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 # Generalization
 
 - Bias & Variance for Generalization
-  ![bias_variance.png](/Week1/image/bias_variance.png)
+  ![/Week1/image/bias_variance.png](https://github.com/goomseo/2023-2-AI-Study/blob/main/Week1/image/bias_variance.png?raw=true)
   - Bias (편향): 모델이 예측한 값과 실제 값의 차이. Bias가 너무 높으면, 학습 데이터에 모델이 집중 하지 않아 Underfitting이 일어날 수 있다.
   - Variance (분산): 모델의 예측 변동성. Variance가 너무 높으면, 모델이 학습 데이터에만 집중을 하게 되어 실제 데이터에 대해 일반화를 하지 못할 수 있다. (Overfitting)
 - Bias-Variance Trade-off in Supervised Learning
-  ![img1.daumcdn.png](/Week1/image/img1.daumcdn.png)
+  ![img1.daumcdn.png](https://github.com/goomseo/2023-2-AI-Study/blob/main/Week1/image/img1.daumcdn.png?raw=true)
   - Generalization Error = Bias^2 + Variance + Irreducible Error
 - 딥러닝 모델은 데이터로부터 직접 Feature를 만들어낸다. 이 때 처음부터 모델의 구조를 단순하게 설계하면 높은 수준의 Feature를 모델이 학습할 수 없다. 이를 방지하기 위해 모델의 구조를 복잡하게 설계하면 모델이 **학습 데이터를 과하게 학습(Overfitting)**하게 되는데, Train Data(일반적으로 Test Data의 부분 집합)에 대해서는 오차가 감소하지만 Test Data에 대해서는 오차가 증가하게 된다. —> **일반화 성능을 만족하지 못 하게 된다.(일반화 오류가 증가한다.)**
 - 일반화 오류를 줄이기 위한 방법
@@ -129,7 +129,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
     - 주어진 Train Set을 임의의 비율에 따라 Train Data + Validation Data로 분할하여 사용(보통 7:3). Train Data로 학습시킨 후, Validation Data로 검증을 한다. 이 때 Test Data는 사용하지 않는다.
   - [Ensemble](https://ineed-coffee.github.io/posts/Ensemble-concept/): 여러 분류 모델을 조합하여 최종 결과를 내어 성능을 향상시키는 기법
     - Ensemble 기법의 종류
-      ![ensemble.png](/Week1/image/ensemble.png)
+      ![(/Week1/image/ensemble.png)](https://github.com/goomseo/2023-2-AI-Study/blob/main/Week1/image/ensemble.png?raw=true)
       - Voting
         - 각각의 단일 모델이 예측한 분류 중 가장 많은 비율을 차지한 레이블을 최종 결과로 예측. 주로 Classification에서 쓰인다.
         - Hard Voting, Soft Voting - Soft Voting이 더욱 정교한 방식
