@@ -45,7 +45,6 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 위에 서술한 내용을 살펴보면, AI의 한 분야로 ML이 존재하고, ML 기술의 종류 중 하나인 인공신경망의 방법론 중 하나가 DL이라는 것을 알 수 있다. 즉 AI ⊃ ML ⊃ DL이다. 이를 이미지로 표현하면 아래와 같다.
 
 ![(이미지 출처 - [클릭](https://serokell.io/blog/ai-ml-dl-difference))](https://serokell.io/files/zx/zxwju3ha.Machine-learning-vs-deep-learning.jpg)
-
 (이미지 출처 - [클릭](https://serokell.io/blog/ai-ml-dl-difference))
 
 ---
@@ -83,7 +82,6 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 # Neural Network
 
 ![(이미지 출처 - [클릭](https://www.ibm.com/topics/neural-networks))](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/3a/b8/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork.png)
-
 (이미지 출처 - [클릭](https://www.ibm.com/topics/neural-networks))
 
 - Neural Networks, 즉 인공신경망은 Artificial Neural Networks(ANNs) 혹은 Simulated Neural Networks(SNNs)로도 알려져 있으며, DL 알고리즘의 핵심이다.
@@ -119,7 +117,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 # Generalization
 
 - Bias & Variance for Generalization
-  ![Alt text](/Week1/image/image.png)
+  ![Alt text](https://goomseo.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fcae03794-17b8-4ef4-ba76-6b600ee8c90f%2F81f9f879-ddf8-4a1d-8874-adfecb63ef59%2Fbiasvariance.png?table=block&id=149a9ebd-3696-4cbe-bf33-3ef16bd046d8&spaceId=cae03794-17b8-4ef4-ba76-6b600ee8c90f&width=900&userId=&cache=v2)
   (이미지 출처 - [클릭](https://ngkim.tistory.com/117))
   - Bias (편향): 모델이 예측한 값과 실제 값의 차이. Bias가 너무 높으면, 학습 데이터에 모델이 집중 하지 않아 Underfitting이 일어날 수 있다.
   - Variance (분산): 모델의 예측 변동성. Variance가 너무 높으면, 모델이 학습 데이터에만 집중을 하게 되어 실제 데이터에 대해 일반화를 하지 못할 수 있다. (Overfitting)
