@@ -117,7 +117,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 # Generalization
 
 - Bias & Variance for Generalization
-  ![Alt text](https://goomseo.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fcae03794-17b8-4ef4-ba76-6b600ee8c90f%2F81f9f879-ddf8-4a1d-8874-adfecb63ef59%2Fbiasvariance.png?table=block&id=149a9ebd-3696-4cbe-bf33-3ef16bd046d8&spaceId=cae03794-17b8-4ef4-ba76-6b600ee8c90f&width=900&userId=&cache=v2)
+  ![asdf](https://goomseo.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fcae03794-17b8-4ef4-ba76-6b600ee8c90f%2F81f9f879-ddf8-4a1d-8874-adfecb63ef59%2Fbiasvariance.png?table=block&id=149a9ebd-3696-4cbe-bf33-3ef16bd046d8&spaceId=cae03794-17b8-4ef4-ba76-6b600ee8c90f&width=900&userId=&cache=v2)
   (이미지 출처 - [클릭](https://ngkim.tistory.com/117))
   - Bias (편향): 모델이 예측한 값과 실제 값의 차이. Bias가 너무 높으면, 학습 데이터에 모델이 집중 하지 않아 Underfitting이 일어날 수 있다.
   - Variance (분산): 모델의 예측 변동성. Variance가 너무 높으면, 모델이 학습 데이터에만 집중을 하게 되어 실제 데이터에 대해 일반화를 하지 못할 수 있다. (Overfitting)
