@@ -84,7 +84,7 @@
 
 # Pytorch Dataset
 
-- Dataset 클래스
+- Dataset
     - 데이터 입력 형태를 정의하는 클래스로, 데이터를 입력하는 방식을 표준화한다.
     - 형식
         
@@ -102,7 +102,7 @@
                 pass
         ```
         
-- DataLoader 클래스
+- DataLoader
     - 모델 학습을 위해 데이터를 Mini Batch 단위로 제공해주며, Batch 처리가 주요 작업이다.
     - 주로 batch_size, num_workers, shuffle, drop_last 등의 attribute를 사용한다.
     - 정의

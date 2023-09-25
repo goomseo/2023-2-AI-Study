@@ -203,7 +203,7 @@ AI, ML, DL은 각각 Artificial Intelligence, Machine Learning, Deep Learning의
 
 (이미지 출처 - [클릭](https://geunuk.tistory.com/435))
 
-- 1x1 크기의 Convolution Filter를 이용한 Convolution Layer이다.
+- 1x1 Convolution Filter를 이용한 Convolution Layer이다.
 - 장점
   - 입력 데이터의 채널 수 조절
     - 입력 데이터의 채널 수가 크면, 1x1 Convolution을 이용하여 채널 수를 줄여 모델의 크기를 줄일 수 있다. 반대로 채널 수를 늘릴 수도 있다.
